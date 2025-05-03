@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cognitive Chrome Agent</title>
+    <style>
+        body {
+            width: 300px;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+        }
+        .preference-section {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #status {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #dff0d8;
+            color: #3c763d;
+        }
+        .error {
+            background-color: #f2dede;
+            color: #a94442;
+        }
+        #explanation-section {
+            display: none;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+        }
+        #explanation-section h3 {
+            margin: 0 0 10px 0;
+            color: #2196F3;
+            font-size: 16px;
+        }
+        #explanation-content {
+            margin: 0;
+            line-height: 1.5;
+        }
+        .close-explanation {
+            float: right;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #666;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Cognitive Chrome Agent</h2>
+    
+    <div class="preference-section">
+        <label for="location">Location:</label>
+        <input type="text" id="location" placeholder="Enter your location">
+        
+        <label for="interests">Interests (comma-separated):</label>
+        <textarea id="interests" placeholder="technology, science, art"></textarea>
+        
+        <label for="topics">Favorite Topics (comma-separated):</label>
+        <textarea id="topics" placeholder="AI, machine learning, neural networks"></textarea>
+        
+        <label for="websites">Favorite Websites (comma-separated):</label>
+        <textarea id="websites" placeholder="github.com, medium.com"></textarea>
+    </div>
+    
+    <button id="savePreferences">Save Preferences</button>
+    <div id="status"></div>
+
+    <div id="explanation-section">
+        <button class="close-explanation">×</button>
+        <h3>Content Explanation</h3>
+        <p id="explanation-content"></p>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html> 
