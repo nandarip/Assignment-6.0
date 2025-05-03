@@ -34,12 +34,58 @@ A Chrome extension that implements a cognitive agent with four layers: Perceptio
 
 ## Architecture
 
-The extension is built with four cognitive layers:
+The extension is built with four cognitive layers that work together to create an intelligent browsing assistant:
 
-1. **Perception**: Gathers and analyzes page content
-2. **Memory**: Stores user preferences and browsing history
-3. **Decision-Making**: Evaluates content and decides on actions
-4. **Action**: Executes decisions and interacts with the browser
+### 1. Perception Layer (`perception.py`)
+This layer acts as the extension's "senses", analyzing and understanding web content:
+- Scans webpage DOM structure and content
+- Extracts key information like:
+  - Main article text and headlines
+  - Important keywords and topics
+  - User interaction patterns (clicks, scrolls, time spent)
+- Uses natural language processing to understand content context
+- Identifies content relevance to user interests
+
+### 2. Memory Layer (`memory.py`)
+Functions as the extension's storage and learning system:
+- Maintains persistent storage of:
+  - User preferences and interests
+  - Browsing history with metadata
+  - Previously identified relevant content
+- Implements learning mechanisms:
+  - Updates interest weights based on user behavior
+  - Builds knowledge graphs of related topics
+  - Tracks content engagement patterns
+- Provides quick access to historical data for decision making
+
+### 3. Decision-Making Layer (`decision_making.py`)
+Acts as the "brain" of the extension, processing information and making choices:
+- Analyzes input from Perception and Memory layers
+- Makes intelligent decisions about:
+  - Which content to highlight
+  - When to suggest related articles
+  - What content to save for later
+  - How to customize page layout
+- Uses machine learning algorithms to:
+  - Score content relevance
+  - Predict user interests
+  - Optimize timing of suggestions
+  - Balance user engagement and interruption
+
+### 4. Action Layer (`action.py`)
+Executes the decisions made by implementing changes in the browser:
+- Modifies webpage appearance:
+  - Highlights relevant text
+  - Adds visual indicators for important content
+  - Adjusts layout based on preferences
+- Manages user interactions:
+  - Shows notification popups
+  - Handles content saving
+  - Implements custom navigation features
+- Provides feedback to other layers about:
+  - User responses to actions
+  - Success rates of suggestions
+  - Performance metrics
 
 ## Development
 
